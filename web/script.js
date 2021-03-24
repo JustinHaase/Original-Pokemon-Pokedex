@@ -1,3 +1,32 @@
+//on scroll sticky header function
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("header");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+//music on click function
+var music = document.getElementById('music');
+
+function playAudio() {
+	if (music.paused){
+		music.play();
+		pButton.className = "";
+		pButton.className = "pause";
+	} else {
+		music.pause();
+		pButton.className = "";
+		pButton.className = "play";
+	}
+}
+
 // create an XHR object
 let pokedex = document.getElementById("pokedex");
 

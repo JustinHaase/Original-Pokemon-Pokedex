@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Pokedex</h1>
+    <header class= "main-header" id= "header">
+      <div class = "headcontainer">
+          <button type="button" id="pbutton" class="play" onclick="playAudio()"><img class="center" src = "logo4.png" align="left" ></button>
+          <audio id="music">
+              <source src="Pokemon-Theme.mp3" type="audio/mp3"/>
+            </audio>
+          <a id="shuffle">
+              <div class="pokeball">
+                  <figure class="hover-rotate"><img src = "Poke_Ball.png" height=154px width=154px ></figure>
+              </div>
+          </a>
+          <div class = "sortmenu">
+              <div class="dropdown">
+                  <div class="dropbtn">Sort results by...</button>
+                  <div class="dropdown-content">
+                  
+                  <a href="">Lowest Number (First)</a>
+                  <a href="">Highest Number (First)</a>
+                  <a href="">A-Z</a>
+                  <a href="">Z-A</a>
+                  </div>
+      </div>    
+  </div>
+  </header>
     <ol id="pokedex"></ol>
    <script src="script.js"></script> 
   </body>

@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
-//const port = 3000
 //const axios = require ('axios')
 const cors = require("cors");
-const port = 4000;
+const port = 7000;
 app.use(cors());
 const fetch = require("node-fetch");
 const promises = [];
@@ -15,7 +14,10 @@ app.get("/", (req, res) => {
 app.get("/pokemon/all", (req, res) => {
   for (let i = 1; i <= 150; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then((res) => res.json()));
+    //console.log("url error: "+ url);
+    promises.push(fetch(url).then((res) => 
+      res.json()
+    ));
   }
   Promise.all(promises).then((results) => {
     const pokemonResponse = results.map((result) => ({
@@ -32,7 +34,7 @@ app.get("/pokemon/all", (req, res) => {
 app.get("/pokemon/random", (req, res) => {
   for (let i = 1; i <= 150; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then((res) => res.json()));
+    promises.push(fetch("url").then((res) => res.json()));
   }
   Promise.all(promises).then((results) => {
     const pokemonResponse = results.map((result) => ({
@@ -50,3 +52,6 @@ app.get("/pokemon/random", (req, res) => {
 app.listen(port, () => {
   console.log(`Poke app listening at http://localhost: ${port}`);
 });
+
+
+//<img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png"

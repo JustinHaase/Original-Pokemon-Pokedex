@@ -52,7 +52,7 @@ xhr.onload = () => {
 };
 
 // create a `GET` request
-xhr.open("GET", "http://localhost:4000/pokemon/all/");
+xhr.open("GET", "http://localhost:7000/pokemon/all/");
 
 // send request
 xhr.send();

@@ -25,7 +25,7 @@ button{
     outline: none;
     border: none;
     color: #fff;
-    background: url(logo2.png);
+    background: url();
     position: relative;
     z-index: 0;
     border-radius: 10px;
@@ -115,23 +115,23 @@ button:active:after{
 }
 
  .center {
-    height: 166.66px;
-    width: 366.66px;
-    image-orientation: center;
+  height: 166.66px;
+  width: 366.66px;
+  image-orientation: center;
   } 
 
   /*-----sorting menu-----*/
 
  .sortmenu {
-    width: 150px;
-    height: 45px;
-    outline: none;
-    border: none;
-    color: #fff;
-    background: url(logo2.png);
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  width: 150px;
+  height: 45px;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: url();
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
  .dropbtn {
   background-color: bisque;
@@ -159,6 +159,7 @@ button:active:after{
   min-width: 200px;
   z-index: 1;
   right: 0;
+  border-radius: 10px;
 }
 
 .dropdown-content a {
@@ -166,9 +167,10 @@ button:active:after{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  border-radius: 10px;
 }
 
-.dropdown-content a:hover {background-color: white;}
+.dropdown-content a:hover {background-color: rgb(248, 223, 193);}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: rgb(248, 214, 172);}
 
@@ -180,25 +182,79 @@ button:active:after{
 
  /*-----------------------*/
 
-body {
-    background-color: #de6f21;
-    margin: 0px;
-  }
+ body {
+  background: linear-gradient(45deg, rgb(252, 240, 225),bisque, rgb(252, 193, 122));
+  height: 3600vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: url(PokeballCUR.png), auto;
+  margin: 0;
+}
   
   h1 {
     text-align: center;
     
   }
-  .card-header {
+
+  .loadingcard {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    
+    grid-template-columns: 204.8px 204.8px 204.8px 204.8px;
+    grid-template-rows: 285.8px 285.8px 285.8px;
+    grid-gap: 1rem;
+    margin-top: 100vh;
   }
+  .loadingcard:before {
+    display: grid;
+    grid-template-columns: 204.8px 204.8px 204.8px 204.8px;
+    grid-template-rows: 285.8px 285.8px 285.8px;
+    grid-gap: 1rem;
+    margin-top: 100px;
+  }
+  .loadingcard img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: rgb(34, 28, 28);
+    border-radius: 20px;
+    overflow: auto;
+    display: inline-block;
+    flex-direction: column;
+    padding: 0;
+}
+.pokedex{
+  position:relative;
+  top: 0;
+  overflow: scroll;
+
+}
+  #pokedex {
+    display: grid;
+    grid-template-rows: 285.8px, auto;
+    grid-template-columns: 204.8px 204.8px 204.8px 204.8px;
+    grid-gap: 1rem;
+    margin-bottom: 0px;
+    padding: 0;
+    top: 200px;
+  }
+
+
+/* .ol {
+  display: grid;
+  grid-template-columns: 204.8px 204.8px 204.8px 204.8px;
+  grid-template-rows: 285.8px 285.8 285.8, auto;
+  grid-gap: 1rem;
+  margin-bottom: 0px;
+  padding: 0;
+  } */
   /* -----pokemon card ----- */
+
+
 .card {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     color: rgb(34, 28, 28);
-    border-radius: 4px;
+    border-radius: 20px;
     border: 3px solid #171717;
     overflow: auto;
     display: inline-block;
@@ -216,21 +272,18 @@ body {
   } */
   /* -----pokemon card contents----- */
   .card-image {
-    font-size: 32px;
-    font-weight: normal;
-    width: 50%;
-    height: 50%;
-    margin: 20px auto 20px;
-  
+    margin: 0 auto;
+    width: 100%;
   }
-  #pokedex {
+
+  /* #pokedex {
     padding-inline-start: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(204.8px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(283.8px, 1fr));
     grid-gap: 1rem;
     margin: 400px;
-  }
+  } */
   .right {
     text-align: right;
     padding-right: 20px;
@@ -240,4 +293,12 @@ body {
       padding-left: 20px;
       text-transform: capitalize;
       
+  }
+
+    /*-----Meida Query-----*/
+
+    @media (max-width: 1200px) and (min-width: 586px){
+      .collapse {
+        display: none !important;
+  }
   }

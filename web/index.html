@@ -13,12 +13,18 @@
           <audio id="music">
               <source src="Pokemon-Theme.mp3" type="audio/mp3"/>
             </audio>
-          <a id="shuffle">
+
               <div class="pokeball">
                   <figure class="hover-rotate"><img src = "Poke_Ball.png" height=154px width=154px ></figure>
               </div>
-          </a>
-          <div class = "sortmenu">
+              <div class = "fields">
+                <div class = "searchbar">
+                  <form action="/form/submit" method="GET">
+                    <input type="text" name="text" class="search" placeholder="Search the Pokedex!">
+                    <input type="submit" name="submit" class="submit" value="Search">
+                  </form>
+            </div>
+            <div class = "sortmenu">
               <div class="dropdown">
                   <div class="dropbtn">Sort results by...</button>
                   <div class="dropdown-content">
@@ -29,10 +35,11 @@
                   <a href="">Z-A</a>
                   </div>
       </div>    
+    </div>
   </div>
   </header>
-  <div class = "pokedex">
-    <ol id="pokedex">
+  <!-- <div class = "pokedex">
+    <ol id="pokedex"> -->
       <!-- <div class= "loadingcard">
         <img src="pokecardback.png">
         <img src="pokecardback.png">
@@ -47,8 +54,11 @@
         <img src="pokecardback.png">
         <img src="pokecardback.png">
       </div> -->
-    </ol>
-  </div>
+    <!-- </ol>
+  </div> -->
+  <div id="poke_container" class="poke-container"</div>
+      
+
    <script src="script.js"></script> 
   </body>
 </html>

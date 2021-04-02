@@ -374,7 +374,7 @@ animation: bounce .5s;
   }
   
   .pokemon .img-container img {
-    margin-top: 20px;
+    margin-top: 0;
     max-width: 90%;
   }
   
@@ -387,15 +387,29 @@ animation: bounce .5s;
     background-color: #fff;
     border-radius: 100px;
     font-size: 0.8em;
-    padding: 5px 10px;
+    padding: 1px 1px;
   }
   
   .pokemon .name {
-    margin: 15px 0 7px;
     letter-spacing: 1px;
   }
 
-
+  .pokemon .typeA {
+    float: left;
+    background-color: #fff;
+    border-radius: 100px;
+    font-size: 0.8em;
+    padding: 1px 1px;
+    text-align: bottom left;
+  }
+  
+  .pokemon .typeB {
+    float: right;
+    background: #fff;
+    border-radius: 100px;
+    font-size: 0.8em;
+    padding: 1px 10px;
+  }
 
 
 
@@ -413,9 +427,9 @@ animation: bounce .5s;
   }
 
 
-  .img.center {
+  /* .img.center {
     text-align: center;
-  }
+  } */
 
   .center {
     text-align: center;

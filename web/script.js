@@ -41,7 +41,7 @@ document.getElementById("poke_container").onclick = function () {
 
 const poke_container =
 document.getElementById('poke_container');
-const pokemons_number = 150;
+const pokemon_number = 150;
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -59,13 +59,11 @@ const colors = {
 	normal: '#F5F5F5',
 };
 
+
 const main_types = Object.keys(colors);
-const second_types = Object.keys(colors);
 
-console.log(main_types);
-
-const fetchPokemons = async() => {
-  for(let i=1; i<=pokemons_number; i++){
+const fetchPokemon = async() => {
+  for(let i=1; i<=pokemon_number; i++){
       await getPokemon(i);
   }
 }
@@ -75,22 +73,32 @@ const getPokemon = async id => {
   const res = await fetch(url);
   const pokemon = await res.json();
   createPokemonCard(pokemon);
-  console.log(pokemon);
 }
 
-fetchPokemons();
+fetchPokemon();
 
 function createPokemonCard(pokemon) {
   const pokemonEl = document.createElement('div');
+  
   pokemonEl.classList.add('pokemon');
   
-  const poke_types = pokemon.types.map(el => el.type.name);
-  const type = main_types.find(type => poke_types.indexOf(type) > -1 );
+  const typeA = pokemon.types[0].type.name;
+  let typeB = "";
+  if (pokemon.types.length > 1) {
+    typeB = pokemon.types[1].type.name;
+    pokemonEl.style.background = "conic-gradient(" + colors[typeA] + "," + colors[typeB] +")";
+    
+  }else{
+    typeB = "";
+    pokemonEl.style.background = colors[typeA];
+  }
+  
   const name = pokemon.name[0].toUpperCase() +
         pokemon.name.slice(1);
-  const color = colors[type];
   
-  pokemonEl.style.backgroundColor = color;
+
+  // let pokemonEl.style.background = colors[typeA]
+  // pokemonEl.style.background = "conic-gradient(" + colors[typeA] + "," + colors[typeB] +")";
   
   const pokeInnerHTML = `
   <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
@@ -99,8 +107,11 @@ function createPokemonCard(pokemon) {
     <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
     
   </div>
-  <div class="info">
-    <small class="type">Type: <span>${type}<span></small>
+  <div class="typeA">
+    <small class="typeA"><span>${typeA}<span></small>
+  </div>
+  <div class="typeB">
+    <small class="typeB"><span>${typeB}<span></small>
   </div>
   `;
   

@@ -271,7 +271,7 @@ button:active:after{
   /* -----pokemon card ----- */
 
 
-.card {
+/* .card {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     color: rgb(34, 28, 28);
     border-radius: 20px;
@@ -280,7 +280,7 @@ button:active:after{
     display: inline-block;
     flex-direction: column;
     padding: 0;
-}
+} */
 
 
   /* .card {
@@ -291,10 +291,10 @@ button:active:after{
     margin: 0px;
   } */
   /* -----pokemon card contents----- */
-  .card-image {
+  /* .card-image {
     margin: 0 auto;
     width: 100%;
-  }
+  } */
 
   /* #pokedex {
     padding-inline-start: 0;
@@ -304,7 +304,7 @@ button:active:after{
     grid-gap: 1rem;
     margin: 400px;
   } */
-  .right {
+  /* .right {
     text-align: right;
     padding-right: 20px;
   }
@@ -313,7 +313,7 @@ button:active:after{
       padding-left: 20px;
       text-transform: capitalize;
       
-  }
+  } */
  /****************************************************/
   /****************************************************/
 /* -----pokemon card animation 1----- */
@@ -366,11 +366,11 @@ animation: bounce .5s;
   }
   
   .pokemon .img-container {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     margin-top: 20px;
-    height: 120px;
-    width: 120px;
+    height: 130px;
+    width: 130px;
   }
   
   .pokemon .img-container img {
@@ -384,7 +384,6 @@ animation: bounce .5s;
   
   .pokemon .number {
     float: right;
-    background-color: #fff;
     border-radius: 100px;
     font-size: 0.8em;
     padding: 1px 1px;
@@ -396,19 +395,16 @@ animation: bounce .5s;
 
   .pokemon .typeA {
     float: left;
-    background-color: #fff;
     border-radius: 100px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding: 1px 1px;
     text-align: bottom left;
   }
   
   .pokemon .typeB {
-    float: right;
-    background: #fff;
     border-radius: 100px;
-    font-size: 0.8em;
-    padding: 1px 10px;
+    font-size: 0.9em;
+    padding: 1px 1px;
   }
 
 

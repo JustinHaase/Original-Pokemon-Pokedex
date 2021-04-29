@@ -41,24 +41,61 @@ document.getElementById("poke_container").onclick = function () {
 
 const poke_container =
 document.getElementById('poke_container');
-const pokemon_number = 150;
-const colors = {
-	fire: '#FDDFDF',
-	grass: '#DEFDE0',
-	electric: '#FCF7DE',
-	water: '#DEF3FD',
-	ground: '#FRE7DA',
-	rock: '#D5D5D4',
-	fairy: '#FCEAFF',
-	poison: '#98D7A5',
-	bug: '#F8D7A3',
-	dragon: '#97B3E6',
-	psychic: '#EAEDA1',
-	flying: '#F5F5F5',
-	fighting: '#E6E0D4',
-	normal: '#F5F5F5',
+const pokemon_number = 151;
+// const colors = {
+// 	fire: '#FDDFDF',
+// 	grass: '#DEFDE0',
+// 	electric: '#FCF7DE',
+// 	water: '#DEF3FD',
+// 	ground: '#FRE7DA',
+// 	rock: '#D5D5D4',
+// 	fairy: '#FCEAFF',
+// 	poison: '#98D7A5',
+// 	bug: '#F8D7A3',
+// 	dragon: '#97B3E6',
+// 	psychic: '#EAEDA1',
+// 	flying: '#F5F5F5',
+// 	fighting: '#E6E0D4',
+// 	normal: '#F5F5F5',
+// };
+
+const colors = { //used (colorlib.com/etc/color-mixer.html) for combinations
+fire: '#fd7d25',
+grass: '#9bcc50',
+electric: '#eed534',
+water: '#4591c4',
+ground: '#CFB73F', //a combination of '#f7df3f' and '#ab9842'
+rock: '#a38c22',
+fairy: '#fdb8e9',
+poison: '#b97ec8',
+bug: '#72a03f',
+dragon: '#AA828C', //a combination of '#52a3ce' and '#f16e57'
+psychic: '#f366b9',
+flying: '#7CBED4', //a combination of '#3dc7ef' and '#bdb9b6'
+fighting: '#d56722',
+normal: '#a4acaf',
+ghost: '#7c63a3',
+ice: '#52c5e7',
+steel: '#9eb7b8',
 };
 
+// const colors = {
+//   fire: '#fd7d25',
+//   grass: '#9bcc50',
+//   electric: '#eed534',
+//   water: '#4591c4',
+//   ground: '#f7df3f','#ab9842', (#CFB73F)
+//   rock: '#a38c22',
+//   fairy: '#fdb8e9',
+//   poison: '#b97ec8',
+//   bug: '#72a03f',
+//   dragon: '#52a3ce','#f16e57', (#AA828C)
+//   psychic: '#f366b9',
+//   flying: '#3dc7ef','#bdb9b6', (#7CBED4)
+//   fighting: '#d56722',
+//   normal: '#a4acaf',
+//   };
+  
 
 const main_types = Object.keys(colors);
 
@@ -86,32 +123,24 @@ function createPokemonCard(pokemon) {
   let typeB = "";
   if (pokemon.types.length > 1) {
     typeB = pokemon.types[1].type.name;
-    pokemonEl.style.background = "conic-gradient(" + colors[typeA] + "," + colors[typeB] +")";
-    
+    pokemonEl.style.background = "conic-gradient(" + colors[typeB] + "," + colors[typeA] + ")";
   }else{
     typeB = "";
     pokemonEl.style.background = colors[typeA];
   }
-  
   const name = pokemon.name[0].toUpperCase() +
         pokemon.name.slice(1);
   
-
-  // let pokemonEl.style.background = colors[typeA]
-  // pokemonEl.style.background = "conic-gradient(" + colors[typeA] + "," + colors[typeB] +")";
   
   const pokeInnerHTML = `
   <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
   <h3 class="name">${name}</h3>
   <div class="img-container">
     <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
-    
   </div>
-  <div class="typeA">
-    <small class="typeA"><span>${typeA}<span></small>
-  </div>
-  <div class="typeB">
-    <small class="typeB"><span>${typeB}<span></small>
+  <div class="infoType">
+  <div class="typeA">Type: ${typeA}</div>
+  <div class="typeB">${typeB}</div>
   </div>
   `;
   

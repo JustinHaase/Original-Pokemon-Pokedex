@@ -12,7 +12,7 @@
           <button type="button" id="pbutton" class="play" onclick="playAudio()"><img class="center" src = "logo4.png" align="left" ></button>
           <audio id="music">
               <source src="Pokemon-Theme.mp3" type="audio/mp3"/>
-            </audio>
+          </audio>
 
               <div class="pokeball">
                   <figure class="hover-rotate"><img src = "Poke_Ball.png" height=154px width=154px ></figure>
@@ -20,8 +20,8 @@
               <div class = "fields">
                 <div class = "searchbar">
                   <form action="/form/submit" method="GET">
-                    <input type="text" name="text" class="search" placeholder="Search the Pokedex!">
-                    <input type="submit" name="submit" class="submit" value="Search">
+                    <input type="text" name="text" onkeyup="mySearch()" class="search" placeholder="Search the Pokedex!">
+                    <!-- <input type="submit" name="submit" class="submit" value="Search"> -->
                   </form>
             </div>
             <div class = "sortmenu">
@@ -29,8 +29,8 @@
                   <div class="dropbtn">Sort results by...</button>
                   <div class="dropdown-content">
                   
-                  <a href="">Lowest Number (First)</a>
-                  <a href="">Highest Number (First)</a>
+                  <a href="file:///Users/noxnoctisnovem/Documents/GitHub/Original-Pokemon-Pokedex/web/index.html" id="idUp">Lowest Number (First)</a>
+                  <a href="file:///Users/noxnoctisnovem/Documents/GitHub/Original-Pokemon-Pokedex/web/index.html" id="idDown">Highest Number (First)</a>
                   <a href="">A-Z</a>
                   <a href="">Z-A</a>
                   </div>
@@ -56,8 +56,7 @@
       </div> -->
     <!-- </ol>
   </div> -->
-  <div id="poke_container" class="poke-container"</div>
-      
+  <div id="poke_container" class="poke-container"></div>
 
    <script src="script.js"></script> 
   </body>

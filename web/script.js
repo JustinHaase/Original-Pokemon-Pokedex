@@ -26,18 +26,59 @@ function playAudio() {
 		pButton.className = "play";
 	}
 }
+
+
+//Search
+// function mySearch() {
+//   var input, filter, div, h3, a, i, txtValue;
+//   input = document.getElementById("poke_container");
+//   filter = input.value.toUpperCase();
+//   div = document.getElementsByClassName("pokemon");
+//   h3 = ul.getElementsByClassName("name");
+//   for (i = 0; i < h3.length; i++) {
+//       a = h3[i].getElementsByClassName("name")[0];
+//       txtValue = name.textContent || name.innerText;
+//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//           li[i].style.display = "";
+//       } else {
+//           li[i].style.display = "none";
+//       }
+//   }
+// }
+
+
 //Big Pokemon Card on click function
 document.getElementById("poke_container").onclick = function () {
   var div = document.createElement('bigcard');
+  var div2 = document.createElement('bigcardface');
+  div.setAttribute("id", "bigcard");
   div.style.backgroundColor = "red";
-  div.style.margin = "fixed";
+  div.style.margin = "auto";
+  div.style.position ="absolute";
+  // div.style.display = "flex";
   div.style.left= "0, auto";
-  div.style.top= "50px";
-  div.style.height= "500px";
-  div.style.width= "300px";
+  div.style.top= "250px";
+  div.style.height= "650px";
+  div.style.width= "450px";
+  div2.setAttribute("id", "bigcardface");
+  div2.style.backgroundColor = "red";
+  div2.style.margin = "auto";
+  div2.style.position ="absolute";
+  // div.style.display = "flex";
+  div2.style.left= "0, auto";
+  div2.style.top= "250px";
+  div2.style.height= "600px";
+  div2.style.width= "400px";
 
   document.getElementsByTagName('body') [0].appendChild(div);
+
 }
+
+
+
+//Big Pokemon Card remove on click function
+
+
 
 const poke_container =
 document.getElementById('poke_container');
@@ -96,8 +137,10 @@ steel: '#9eb7b8',
 //   normal: '#a4acaf',
 //   };
   
-
 const main_types = Object.keys(colors);
+
+
+
 
 const fetchPokemon = async() => {
   for(let i=1; i<=pokemon_number; i++){
@@ -133,7 +176,7 @@ function createPokemonCard(pokemon) {
   
   
   const pokeInnerHTML = `
-  <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
+  <span id= "id" class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
   <h3 class="name">${name}</h3>
   <div class="img-container">
     <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
@@ -147,7 +190,71 @@ function createPokemonCard(pokemon) {
   pokemonEl.innerHTML = pokeInnerHTML;
   
   poke_container.appendChild(pokemonEl);
+
+  
 }
+
+// let toSort = document.getElementById('id');
+
+// toSort = Array.prototype.slice.call(toSort, 0);
+let number = 
+console.log (number);
+
+// toSort.sort(function(a, b) {
+
+// });
+
+// let parent = document.getElementsByClassName('poke_container');
+// parent.innerHTML = "";
+
+// for(var i = 0, l = toSort.length; i < l; i++) {
+//     parent.appendChild(toSort[i]);
+// }
+
+
+// function changeTheDisplay(pokemonEl) {
+//   content = document.querySelectorAll('.poke-container');
+//   content.forEach(row => pokemonEl.innerHTML = '');
+//   display(pokemonEl);
+// };
+
+// //SORT--- Pokemon by ID
+
+// //lowest to highest ID number
+// idUp = document.getElementById('idUp');
+// idUp.addEventListener('click', () => sortByAscendingId());
+
+// function sortByAscendingId() {
+//   pokemonEl.sort((a, b) => a.id - b.id);
+//   changeTheDisplay(pokemonEl);
+// };
+// //heighest to lowest ID number
+// idDown = document.getElementById('idDown');
+// idDown.addEventListener('click', () => sortByDescendingId());
+
+// function sortByDescendingId() {
+//   pokemonEl.sort((a, b) => b.id - a.id);
+//   changeTheDisplay(pokemonEl);
+// };
+
+//SORT--- Pokemon by Name
+//A - Z
+// nameUp = document.getElementById('nameUp');
+// nameUp.addEventListener('click', () => sortByAscendingName());
+
+// function sortByAscendingName() {
+//   pokemon.sort((a, b) => a.name.english < b.name.english ? -1 : 1);
+//   changeTheDisplay(pokemon);
+// };
+//Z - A
+// nameDown = document.getElementById('nameDown');
+// nameDown.addEventListener('click', () => sortByDescendingName());
+
+// function sortByDescendingName() {
+//   pokemon.sort((a, b) => a.name.english < b.name.english ? -1 : 1);
+//   pokemon.reverse();
+//   changeTheDisplay(pokemon);
+// };
 
 
 

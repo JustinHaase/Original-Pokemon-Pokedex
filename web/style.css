@@ -339,12 +339,54 @@ button:active:after{
 animation: bounce .5s;
 }
 
-.div .bigcard {
- background-color: #961a45;
- height: 500px;
- width: 500px;
- position: relative;
+/*-----Big Info Card-----*/
+#bigcard {
+  content:'';
+  position: "fixed";
+  background: linear-gradient(90deg,#9bcc50, #b97ec8);
+  background-size: 400%;
+  filter: blur(40px);
+  height: calc(100% + 3px);
+  width: calc(100% + 3px);
+  border-radius: 10px;
+  z-index:11;
+  /* transition: opacity 0.1s ease-in-out; */
+  animation: animateglow 10s ease infinite;
+ /* position: fixed; */
+ /* max-height: 800px;
+ max-width: 700px; */
+ /* border-radius: 20px;
+ z-index: 11;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around; */
 }
+ @keyframes animateglow {
+   0%{
+     background-position: 0% 50%;
+   }
+
+   50%{
+     background-position:100% 50%;
+   }
+
+   100%{
+     background-position: 0% 50%;
+   }
+ }
+
+ #bigcardface {
+ background-color: #961a45;
+ position: fixed;
+ max-height: 600px;
+ max-width: 400px;
+ border-radius: 20px;
+ z-index: 12;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ }
+
 
   .poke-container {
     position:relative;

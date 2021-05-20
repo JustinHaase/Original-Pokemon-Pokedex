@@ -92,15 +92,18 @@ function createPokemonCard(pokemon) {
   
   
   const pokeInnerHTML = `
-  <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
-  <h3 class="name">${name}</h3>
-  <div class="img-container">
-    <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
+  <div class="front">
+    <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
+    <h3 class="name">${name}</h3>
+    <div class="img-container">
+      <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
+    </div>
+    <div class="infoType">
+      <div class="typeA">Type: ${typeA}</div>
+      <div class="typeB">${typeB}</div>
+    </div>
   </div>
-  <div class="infoType">
-  <div class="typeA">Type: ${typeA}</div>
-  <div class="typeB">${typeB}</div>
-  </div>
+  <div class="back"> <img src = "pokecardbackresize.png"></div>
   `;
   
   pokemonEl.innerHTML = pokeInnerHTML;
@@ -108,6 +111,7 @@ function createPokemonCard(pokemon) {
   poke_container.appendChild(pokemonEl);
 
 }
+
 
 
 document.getElementById("poke_container").onclick = function () {
@@ -135,6 +139,22 @@ document.getElementById("poke_container").onclick = function () {
   document.getElementsByTagName('body') [0].appendChild(div);
 
 }
+
+
+//Big Card Details script.js:
+// image: <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
+// name: <h3 class="name">${name}</h3>
+// number:<span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
+// type:  <div class="infoType">
+      //  <div class="typeA">Type: ${typeA}</div>
+      //  <div class="typeB">${typeB}</div>
+// weaknesses:
+// height: <div class="height">${height}</div>
+// weight: <div class="weight">${weight}</div>
+// abilities:
+// moves:
+
+
 
 //   //Big Pokemon Card on click function
 // document.getElementById("poke_container").onclick = function () {

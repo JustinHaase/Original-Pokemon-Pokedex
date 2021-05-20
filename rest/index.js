@@ -70,3 +70,15 @@ app.listen(port, () => {
 });
 
 
+//Big Card Details index.js:
+// image: <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
+// name: result.name
+// number:<span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
+// type:  <div class="infoType">
+      //  <div class="typeA">Type: ${typeA}</div>
+      //  <div class="typeB">${typeB}</div>
+// weaknesses:
+// height: <div class="height">${height}</div>
+// weight: <div class="weight">${weight}</div>
+// abilities:
+// moves:
